@@ -1,7 +1,6 @@
 package logvinov.springcourse.dao;
 
 import logvinov.springcourse.models.Person;
-import logvinov.springcourse.util.ConnectionSpringMVSQRUDSchema;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,13 +16,13 @@ import java.util.List;
 @Component
 public class PersonDAO {
 
-    private static final String GET_ALL_PEOPLE = "SELECT id, name, age, email FROM `springmvs-qrud`.person";
+    private static final String GET_ALL_PEOPLE = "SELECT id, name, age, email FROM `springmvc_crud`.person";
 
 
-    private static final String GET_PERSON_BY_ID = "SELECT id, name, age, email FROM `springmvs-qrud`.person WHERE id = ?";
-    private static final String INSERT_NEW_PERSON = "INSERT INTO `springmvs-qrud`.`person` VALUES (NULL, ?, ?, ?)";
-    private static final String UPDATE_PERSON = "UPDATE `springmvs-qrud`.`person` SET `name` = ?, `age` = ?, `email` = ? WHERE (`id` = ?)";
-    private static final String DELETE_PERSON = "DELETE FROM `springmvs-qrud`.`person` WHERE (`id` = ?)";
+    private static final String GET_PERSON_BY_ID = "SELECT id, name, age, email FROM `springmvc_crud`.person WHERE id = ?";
+    private static final String INSERT_NEW_PERSON = "INSERT INTO `springmvc_crud`.`person` VALUES (NULL, ?, ?, ?)";
+    private static final String UPDATE_PERSON = "UPDATE `springmvc_crud`.`person` SET `name` = ?, `age` = ?, `email` = ? WHERE (`id` = ?)";
+    private static final String DELETE_PERSON = "DELETE FROM `springmvc_crud`.`person` WHERE (`id` = ?)";
 
 
     private final JdbcTemplate jdbcTemplate;
